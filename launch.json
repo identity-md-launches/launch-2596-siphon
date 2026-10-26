@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "SiphonToken",
+    "name": "SIPHON",
+    "symbol": "SIPH",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8800,
+    "initialMarketCapWei": "10000000000000000000",
+    "remainderTo": "0x735121a546092f31050a867fd7e3a750c7b0eff9"
+  },
+  "notes": "SiphonToken (src/SiphonToken.sol) is a fixed-supply OpenZeppelin v5 ERC-20 named SIPHON with symbol SIPH and 18 decimals. Its constructor takes no arguments and mints the whole supply, 1,000,000,000 tokens (1000000000000000000000000000 minor units), once to msg.sender, which at launch is the factory; the factory then forwards the swarm share, seeds the pool and sends the remainder per economics. There is no owner, no mint path after the constructor, no burn, no pause, no blacklist or freeze, no fee or tax on transfer, no receive or fallback, and no proxy or upgrade path, so every launch flow moves exactly what it says. The runtime contains no DELEGATECALL, CALLCODE or SELFDESTRUCT. There are no application contracts and no initialization calls. pool.initialPrice is provenance only: the deployer derives the opening price from economics.initialMarketCapWei and totalSupply."
+}
